@@ -1,0 +1,112 @@
+= Performing HTTP requests to other services
+
+This document will show you how to perform HTTP requests to other services.
+
+== What you will build
+
+You will build a Vert.x application that use the API at https://icanhazdadjoke.com/api and displays a new joke every 3 seconds:
+
+image::run.png[]
+
+The application will be structured around 2 verticles:
+
+. `JokeApiVerticle` makes a HTTP request every 3 seconds to get a new joke, then posts it to the event-bus, and
+. `TellMeAJokeVerticle` listens on the event-bus for new jokes, then displays them to the console.
+
+== What you need
+
+* A text editor or IDE
+* Java 8 higher
+* Maven or Gradle
+
+== Create a project
+
+The code of this project contains Maven and Gradle build files that are functionally equivalent.
+
+=== Using Maven
+
+Here is the content of the `pom.xml` file you should be using:
+
+[source,xml]
+.Maven `pom.xml`
+----
+include::pom.xml[]
+----
+
+=== Using Gradle
+
+Assuming you use Gradle with the Kotlin DSL, here is what your `build.gradle.kts` file should look like:
+
+[source,kotlin]
+.Gradle `build.gradle.kts`
+----
+include::build.gradle.kts[]
+----
+
+== Getting jokes with the Vert.x web client
+
+The Vert.x web client greatly simplifies making HTTP requests compared to the more low-level API found in the Vert.x core API.
+It does
+The `WebClient` class can be found in the `io.vertx:vertx-web-client` artifact.
+
+To get new jokes, we need to make HTTP GET requests to https://icanhazdadjoke.com/api.
+To do that every 3 seconds, we will simply use a Vert.x periodic timer.
+
+The API returns simple JSON objects.
+We can test it using a command-line tool like `curl`:
+
+----
+$ curl -H "Accept: application/json" https://icanhazdadjoke.com/
+{"id":"IJBAsrrzPmb","joke":"What do you call a cow with two legs? Lean beef.","status":200}
+----
+
+Here is the code of the `JokeApiVerticle` class:
+
+[source,java]
+----
+include::src/main/java/io/vertx/howtos/httpclient/JokeApiVerticle.java[]
+----
+<1> Get a `WebClient` attached to the current Vert.x instance.
+<2> HTTP GET request for path `/` to host `icanhazdadjoke.com`, on port `443` (HTTPS).
+<3> Do not forget to enable SSL encryption.
+<4> Explicitly say that we want JSON data.
+<5> The response will automatically be converted to JSON.
+<6> We expect a HTTP 200 status code, else it will fail the response.
+<7> The body is a JSON object, and we publish the result on the event-bus.
+
+== Displaying jokes on the console
+
+Since `JokeApiVerticle` publishes new jokes to the `jokes` destination of the event-bus, we can create a verticle to display them on the console.
+
+The `TellMeAJokeVerticle` verticle does just that:
+
+[source,java]
+----
+include::src/main/java/io/vertx/howtos/httpclient/TellMeAJokeVerticle.java[]
+----
+<1> We extract the `joke` field from the returned JSON object.
+
+== Running the application
+
+To run the application we first need to deploy these 2 verticles.
+This can be done with the following `App` class that has a `main` method:
+
+[source,java]
+----
+include::src/main/java/io/vertx/howtos/httpclient/App.java[]
+----
+
+You can run the application from:
+
+. your IDE, by running the `main` method from the `App` class, or
+. with Maven: `mvn compile exec:java`, or
+. with Gradle: `./gradlew run` (Linux, macOS) or `gradle run` (Windows).
+
+== Summary
+
+This document covered:
+
+. the Vert.x web client for making HTTP requests,
+. extracting data from a JSON response,
+. Vert.x periodic tasks,
+. publish / subscribe communications over the event-bus.
