@@ -1,5 +1,7 @@
 theme: vertx-howtos-jekyll-theme
 
+baseurl: /http-client-howto
+
 asciidoctor:
   attributes:
     source-highlighter: rouge
