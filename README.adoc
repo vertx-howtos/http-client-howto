@@ -1,4 +1,7 @@
 = Performing HTTP requests to other services
+:page-permalink: /
+:page-github: vertx-howtos/http-client-howto
+:page-layout: page
 
 This document will show you how to perform HTTP requests to other services.
 
@@ -6,7 +9,7 @@ This document will show you how to perform HTTP requests to other services.
 
 You will build a Vert.x application that use the API at https://icanhazdadjoke.com/api and displays a new joke every 3 seconds:
 
-image::run.png[]
+image::run.png[width=600]
 
 The application will be structured around 2 verticles:
 

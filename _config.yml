@@ -1,0 +1,6 @@
+theme: vertx-howtos-jekyll-theme
+
+asciidoctor:
+  attributes:
+    source-highlighter: rouge
+    rouge-css: style
