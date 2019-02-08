@@ -1,7 +1,6 @@
 = Performing HTTP requests to other services
 :page-permalink: /
 :page-github: vertx-howtos/http-client-howto
-:page-layout: page
 
 This document will show you how to perform HTTP requests to other services.
 
