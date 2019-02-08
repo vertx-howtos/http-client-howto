@@ -4,3 +4,13 @@ asciidoctor:
   attributes:
     source-highlighter: rouge
     rouge-css: style
+
+exclude:
+  - LICENSE
+  - build*
+  - pom.xml
+  - settings.gradle.kts
+  - target
+  - gradle*
+  - src
+  - Gemfile*

@@ -11,4 +11,14 @@ jobs:
   - name: Build with Gradle
     script: ./gradlew --no-daemon build
     jdk: openjdk8
+  - stage: jekyll
+    name: Run Jekyll
+    script: ./.run.jekyll.sh
 
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN
+#   keep-history: true
+#   on:
+#     branch: master
