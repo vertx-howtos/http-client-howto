@@ -1,19 +1,11 @@
 language: java
+jdk: openjdk8
 
 install: true
 
-jobs:
-  include:
-  - stage: test
-    name: Build with Maven
-    script: mvn clean install
-    jdk: openjdk8
-  - name: Build with Gradle
-    script: ./gradlew --no-daemon build
-    jdk: openjdk8
-  - stage: jekyll
-    name: Run Jekyll
-    script: ./.run.jekyll.sh
+script: ./.run.builds.sh
+
+before_deploy: ./.run.jekyll.sh
 
 deploy:
   provider: pages
