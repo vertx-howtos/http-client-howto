@@ -1,0 +1,14 @@
+language: java
+
+install: true
+
+jobs:
+  include:
+  - stage: test
+    name: Build with Maven
+    script: mvn clean install
+    jdk: openjdk8
+  - name: Build with Gradle
+    script: ./gradlew --no-daemon build
+    jdk: openjdk8
+
