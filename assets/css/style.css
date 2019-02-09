@@ -7478,10 +7478,13 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+code {
+  color: #782b90; }
+
 .bg-purple {
   background-color: #782b90; }
 
-pre.highlight {
+pre {
   border-left: solid 0.25em #782b90;
   padding: 0.5em;
   padding-left: 1em;
@@ -7509,10 +7512,12 @@ pre.highlight {
     margin: 0; }
   .admonitionblock td.icon {
     vertical-align: top;
-    padding-right: 0.2em; }
+    padding-right: 0.5em; }
     .admonitionblock td.icon .title {
       font-style: normal;
       font-weight: bold;
       text-transform: uppercase; }
       .admonitionblock td.icon .title:after {
-        content: ': '; }
+        content: ' / '; }
+  .admonitionblock td.content p {
+    margin: 0; }
