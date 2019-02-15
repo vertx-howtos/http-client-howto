@@ -14,7 +14,7 @@ dependencies {
 }
 
 application {
-  mainClassName = "io.vertx.howtos.httpclient.App"
+  mainClassName = "io.vertx.howtos.httpclient.JokeVerticle"
 }
 
 tasks.wrapper {

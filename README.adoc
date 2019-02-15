@@ -10,10 +10,7 @@ You will build a Vert.x application that use the API at https://icanhazdadjoke.c
 
 image::run.png[width=600]
 
-The application will be structured around 2 verticles:
-
-. `JokeApiVerticle` makes a HTTP request every 3 seconds to get a new joke, then posts it to the event-bus, and
-. `TellMeAJokeVerticle` listens on the event-bus for new jokes, then displays them to the console.
+The application fits in a single `JokeVerticle` class.
 
 == What you need
 
@@ -62,11 +59,11 @@ $ curl -H "Accept: application/json" https://icanhazdadjoke.com/
 {"id":"IJBAsrrzPmb","joke":"What do you call a cow with two legs? Lean beef.","status":200}
 ----
 
-Here is the code of the `JokeApiVerticle` class:
+Here is the code of the `JokeVerticle` class:
 
 [source,java]
 ----
-include::src/main/java/io/vertx/howtos/httpclient/JokeApiVerticle.java[]
+include::src/main/java/io/vertx/howtos/httpclient/JokeVerticle.java[]
 ----
 <1> Get a `WebClient` attached to the current Vert.x instance.
 <2> HTTP GET request for path `/` to host `icanhazdadjoke.com`, on port `443` (HTTPS).
@@ -74,33 +71,20 @@ include::src/main/java/io/vertx/howtos/httpclient/JokeApiVerticle.java[]
 <4> Explicitly say that we want JSON data.
 <5> The response will automatically be converted to JSON.
 <6> We expect a HTTP 200 status code, else it will fail the response.
-<7> The body is a JSON object, and we publish the result on the event-bus.
+<7> The body is a JSON object, and we write the result to the console.
 
-== Displaying jokes on the console
 
-Since `JokeApiVerticle` publishes new jokes to the `jokes` destination of the event-bus, we can create a verticle to display them on the console.
-
-The `TellMeAJokeVerticle` verticle does just that:
-
-[source,java]
-----
-include::src/main/java/io/vertx/howtos/httpclient/TellMeAJokeVerticle.java[]
-----
-<1> We extract the `joke` field from the returned JSON object.
 
 == Running the application
 
-To run the application we first need to deploy these 2 verticles.
-This can be done with the following `App` class that has a `main` method:
+The `JokeVerticle` already has a `main` method, so it can be used as-is to:
 
-[source,java]
-----
-include::src/main/java/io/vertx/howtos/httpclient/App.java[]
-----
+. create a `Vertx` context, then
+. deploy `JokeVerticle`.
 
 You can run the application from:
 
-. your IDE, by running the `main` method from the `App` class, or
+. your IDE, by running the `main` method from the `JokeVerticle` class, or
 . with Maven: `mvn compile exec:java`, or
 . with Gradle: `./gradlew run` (Linux, macOS) or `gradle run` (Windows).
 
@@ -110,5 +94,4 @@ This document covered:
 
 . the Vert.x web client for making HTTP requests,
 . extracting data from a JSON response,
-. Vert.x periodic tasks,
-. publish / subscribe communications over the event-bus.
+. Vert.x periodic tasks.
