@@ -95,3 +95,8 @@ This document covered:
 . the Vert.x web client for making HTTP requests,
 . extracting data from a JSON response,
 . Vert.x periodic tasks.
+
+== See also
+
+- https://vertx.io/docs/vertx-core/java/[The Vert.x core APIs documentation]
+- https://vertx.io/docs/vertx-web-client/java/[The Vert.x web client documentation]
