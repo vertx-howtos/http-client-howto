@@ -26,7 +26,7 @@ The code of this project contains Maven and Gradle build files that are function
 
 Here is the content of the `pom.xml` file you should be using:
 
-[source,xml]
+[source,xml,role="collapsed"]
 .Maven `pom.xml`
 ----
 include::pom.xml[]
@@ -36,7 +36,7 @@ include::pom.xml[]
 
 Assuming you use Gradle with the Kotlin DSL, here is what your `build.gradle.kts` file should look like:
 
-[source,kotlin]
+[source,kotlin,role="collapsed"]
 .Gradle `build.gradle.kts`
 ----
 include::build.gradle.kts[]
