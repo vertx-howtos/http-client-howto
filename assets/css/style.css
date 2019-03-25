@@ -7624,7 +7624,8 @@ details {
 .resp-sharing-button--hackernews {
   background-color: #FF6600; }
 
-.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {
+.resp-sharing-button--hackernews:hover,
+.resp-sharing-button--hackernews:focus {
   background-color: #FB6200; }
 
 .resp-sharing-button--vk {
