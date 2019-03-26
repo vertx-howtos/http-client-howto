@@ -100,60 +100,60 @@
 <div class="listingblock collapsed">
 <div class="title">Maven <code>pom.xml</code></div>
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml"><span id="L1" class="line"><span style="color: #999999;font-weight: bold">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span>
-<span id="L2" class="line"><span style="color: #000080">&lt;project</span> <span style="color: #008080">xmlns=</span><span style="color: #d14">"http://maven.apache.org/POM/4.0.0"</span></span>
-<span id="L3" class="line">         <span style="color: #008080">xmlns:xsi=</span><span style="color: #d14">"http://www.w3.org/2001/XMLSchema-instance"</span></span>
-<span id="L4" class="line">         <span style="color: #008080">xsi:schemaLocation=</span><span style="color: #d14">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span style="color: #000080">&gt;</span></span>
-<span id="L5" class="line"></span>
-<span id="L6" class="line">  <span style="color: #000080">&lt;modelVersion&gt;</span>4.0.0<span style="color: #000080">&lt;/modelVersion&gt;</span></span>
-<span id="L7" class="line"></span>
-<span id="L8" class="line">  <span style="color: #000080">&lt;groupId&gt;</span>io.vertx.howtos<span style="color: #000080">&lt;/groupId&gt;</span></span>
-<span id="L9" class="line">  <span style="color: #000080">&lt;artifactId&gt;</span>http-client-howto<span style="color: #000080">&lt;/artifactId&gt;</span></span>
-<span id="L10" class="line">  <span style="color: #000080">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color: #000080">&lt;/version&gt;</span></span>
-<span id="L11" class="line"></span>
-<span id="L12" class="line">  <span style="color: #000080">&lt;properties&gt;</span></span>
-<span id="L13" class="line">    <span style="color: #000080">&lt;vertx.version&gt;</span>3.6.3<span style="color: #000080">&lt;/vertx.version&gt;</span></span>
-<span id="L14" class="line">    <span style="color: #000080">&lt;maven.compiler.source&gt;</span>1.8<span style="color: #000080">&lt;/maven.compiler.source&gt;</span></span>
-<span id="L15" class="line">    <span style="color: #000080">&lt;maven.compiler.target&gt;</span>1.8<span style="color: #000080">&lt;/maven.compiler.target&gt;</span></span>
-<span id="L16" class="line">  <span style="color: #000080">&lt;/properties&gt;</span></span>
-<span id="L17" class="line"></span>
-<span id="L18" class="line">  <span style="color: #000080">&lt;dependencyManagement&gt;</span></span>
-<span id="L19" class="line">    <span style="color: #000080">&lt;dependencies&gt;</span></span>
-<span id="L20" class="line">      <span style="color: #000080">&lt;dependency&gt;</span></span>
-<span id="L21" class="line">        <span style="color: #000080">&lt;groupId&gt;</span>io.vertx<span style="color: #000080">&lt;/groupId&gt;</span></span>
-<span id="L22" class="line">        <span style="color: #000080">&lt;artifactId&gt;</span>vertx-stack-depchain<span style="color: #000080">&lt;/artifactId&gt;</span></span>
-<span id="L23" class="line">        <span style="color: #000080">&lt;version&gt;</span>${vertx.version}<span style="color: #000080">&lt;/version&gt;</span></span>
-<span id="L24" class="line">        <span style="color: #000080">&lt;type&gt;</span>pom<span style="color: #000080">&lt;/type&gt;</span></span>
-<span id="L25" class="line">        <span style="color: #000080">&lt;scope&gt;</span>import<span style="color: #000080">&lt;/scope&gt;</span></span>
-<span id="L26" class="line">      <span style="color: #000080">&lt;/dependency&gt;</span></span>
-<span id="L27" class="line">    <span style="color: #000080">&lt;/dependencies&gt;</span></span>
-<span id="L28" class="line">  <span style="color: #000080">&lt;/dependencyManagement&gt;</span></span>
-<span id="L29" class="line"></span>
-<span id="L30" class="line">  <span style="color: #000080">&lt;dependencies&gt;</span></span>
-<span id="L31" class="line">    <span style="color: #000080">&lt;dependency&gt;</span></span>
-<span id="L32" class="line">      <span style="color: #000080">&lt;groupId&gt;</span>io.vertx<span style="color: #000080">&lt;/groupId&gt;</span></span>
-<span id="L33" class="line">      <span style="color: #000080">&lt;artifactId&gt;</span>vertx-core<span style="color: #000080">&lt;/artifactId&gt;</span></span>
-<span id="L34" class="line">    <span style="color: #000080">&lt;/dependency&gt;</span></span>
-<span id="L35" class="line">    <span style="color: #000080">&lt;dependency&gt;</span></span>
-<span id="L36" class="line">      <span style="color: #000080">&lt;groupId&gt;</span>io.vertx<span style="color: #000080">&lt;/groupId&gt;</span></span>
-<span id="L37" class="line">      <span style="color: #000080">&lt;artifactId&gt;</span>vertx-web-client<span style="color: #000080">&lt;/artifactId&gt;</span></span>
-<span id="L38" class="line">    <span style="color: #000080">&lt;/dependency&gt;</span></span>
-<span id="L39" class="line">  <span style="color: #000080">&lt;/dependencies&gt;</span></span>
-<span id="L40" class="line"></span>
-<span id="L41" class="line">  <span style="color: #000080">&lt;build&gt;</span></span>
-<span id="L42" class="line">    <span style="color: #000080">&lt;plugins&gt;</span></span>
-<span id="L43" class="line">      <span style="color: #000080">&lt;plugin&gt;</span></span>
-<span id="L44" class="line">        <span style="color: #000080">&lt;groupId&gt;</span>org.codehaus.mojo<span style="color: #000080">&lt;/groupId&gt;</span></span>
-<span id="L45" class="line">        <span style="color: #000080">&lt;artifactId&gt;</span>exec-maven-plugin<span style="color: #000080">&lt;/artifactId&gt;</span></span>
-<span id="L46" class="line">        <span style="color: #000080">&lt;version&gt;</span>1.5.0<span style="color: #000080">&lt;/version&gt;</span></span>
-<span id="L47" class="line">        <span style="color: #000080">&lt;configuration&gt;</span></span>
-<span id="L48" class="line">          <span style="color: #000080">&lt;mainClass&gt;</span>io.vertx.howtos.httpclient.JokeVerticle<span style="color: #000080">&lt;/mainClass&gt;</span></span>
-<span id="L49" class="line">        <span style="color: #000080">&lt;/configuration&gt;</span></span>
-<span id="L50" class="line">      <span style="color: #000080">&lt;/plugin&gt;</span></span>
-<span id="L51" class="line">    <span style="color: #000080">&lt;/plugins&gt;</span></span>
-<span id="L52" class="line">  <span style="color: #000080">&lt;/build&gt;</span></span>
-<span id="L53" class="line"></span>
-<span id="L54" class="line"><span style="color: #000080">&lt;/project&gt;</span></span></code></pre>
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="xml"><span style="color: #999999;font-weight: bold">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span style="color: #000080">&lt;project</span> <span style="color: #008080">xmlns=</span><span style="color: #d14">"http://maven.apache.org/POM/4.0.0"</span>
+         <span style="color: #008080">xmlns:xsi=</span><span style="color: #d14">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span style="color: #008080">xsi:schemaLocation=</span><span style="color: #d14">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span style="color: #000080">&gt;</span>
+
+  <span style="color: #000080">&lt;modelVersion&gt;</span>4.0.0<span style="color: #000080">&lt;/modelVersion&gt;</span>
+
+  <span style="color: #000080">&lt;groupId&gt;</span>io.vertx.howtos<span style="color: #000080">&lt;/groupId&gt;</span>
+  <span style="color: #000080">&lt;artifactId&gt;</span>http-client-howto<span style="color: #000080">&lt;/artifactId&gt;</span>
+  <span style="color: #000080">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color: #000080">&lt;/version&gt;</span>
+
+  <span style="color: #000080">&lt;properties&gt;</span>
+    <span style="color: #000080">&lt;vertx.version&gt;</span>3.6.3<span style="color: #000080">&lt;/vertx.version&gt;</span>
+    <span style="color: #000080">&lt;maven.compiler.source&gt;</span>1.8<span style="color: #000080">&lt;/maven.compiler.source&gt;</span>
+    <span style="color: #000080">&lt;maven.compiler.target&gt;</span>1.8<span style="color: #000080">&lt;/maven.compiler.target&gt;</span>
+  <span style="color: #000080">&lt;/properties&gt;</span>
+
+  <span style="color: #000080">&lt;dependencyManagement&gt;</span>
+    <span style="color: #000080">&lt;dependencies&gt;</span>
+      <span style="color: #000080">&lt;dependency&gt;</span>
+        <span style="color: #000080">&lt;groupId&gt;</span>io.vertx<span style="color: #000080">&lt;/groupId&gt;</span>
+        <span style="color: #000080">&lt;artifactId&gt;</span>vertx-stack-depchain<span style="color: #000080">&lt;/artifactId&gt;</span>
+        <span style="color: #000080">&lt;version&gt;</span>${vertx.version}<span style="color: #000080">&lt;/version&gt;</span>
+        <span style="color: #000080">&lt;type&gt;</span>pom<span style="color: #000080">&lt;/type&gt;</span>
+        <span style="color: #000080">&lt;scope&gt;</span>import<span style="color: #000080">&lt;/scope&gt;</span>
+      <span style="color: #000080">&lt;/dependency&gt;</span>
+    <span style="color: #000080">&lt;/dependencies&gt;</span>
+  <span style="color: #000080">&lt;/dependencyManagement&gt;</span>
+
+  <span style="color: #000080">&lt;dependencies&gt;</span>
+    <span style="color: #000080">&lt;dependency&gt;</span>
+      <span style="color: #000080">&lt;groupId&gt;</span>io.vertx<span style="color: #000080">&lt;/groupId&gt;</span>
+      <span style="color: #000080">&lt;artifactId&gt;</span>vertx-core<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;/dependency&gt;</span>
+    <span style="color: #000080">&lt;dependency&gt;</span>
+      <span style="color: #000080">&lt;groupId&gt;</span>io.vertx<span style="color: #000080">&lt;/groupId&gt;</span>
+      <span style="color: #000080">&lt;artifactId&gt;</span>vertx-web-client<span style="color: #000080">&lt;/artifactId&gt;</span>
+    <span style="color: #000080">&lt;/dependency&gt;</span>
+  <span style="color: #000080">&lt;/dependencies&gt;</span>
+
+  <span style="color: #000080">&lt;build&gt;</span>
+    <span style="color: #000080">&lt;plugins&gt;</span>
+      <span style="color: #000080">&lt;plugin&gt;</span>
+        <span style="color: #000080">&lt;groupId&gt;</span>org.codehaus.mojo<span style="color: #000080">&lt;/groupId&gt;</span>
+        <span style="color: #000080">&lt;artifactId&gt;</span>exec-maven-plugin<span style="color: #000080">&lt;/artifactId&gt;</span>
+        <span style="color: #000080">&lt;version&gt;</span>1.5.0<span style="color: #000080">&lt;/version&gt;</span>
+        <span style="color: #000080">&lt;configuration&gt;</span>
+          <span style="color: #000080">&lt;mainClass&gt;</span>io.vertx.howtos.httpclient.JokeVerticle<span style="color: #000080">&lt;/mainClass&gt;</span>
+        <span style="color: #000080">&lt;/configuration&gt;</span>
+      <span style="color: #000080">&lt;/plugin&gt;</span>
+    <span style="color: #000080">&lt;/plugins&gt;</span>
+  <span style="color: #000080">&lt;/build&gt;</span>
+
+<span style="color: #000080">&lt;/project&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -165,28 +165,28 @@
 <div class="listingblock collapsed">
 <div class="title">Gradle <code>build.gradle.kts</code></div>
 <div class="content">
-<pre class="highlight"><code class="language-kotlin" data-lang="kotlin"><span id="L1" class="line"><span style="background-color: #f8f8f8">plugins</span> <span style="background-color: #f8f8f8">{</span></span>
-<span id="L2" class="line">  <span style="background-color: #f8f8f8">java</span></span>
-<span id="L3" class="line">  <span style="background-color: #f8f8f8">application</span></span>
-<span id="L4" class="line"><span style="background-color: #f8f8f8">}</span></span>
-<span id="L5" class="line"></span>
-<span id="L6" class="line"><span style="background-color: #f8f8f8">repositories</span> <span style="background-color: #f8f8f8">{</span></span>
-<span id="L7" class="line">  <span style="background-color: #f8f8f8">mavenCentral</span><span style="background-color: #f8f8f8">()</span></span>
-<span id="L8" class="line"><span style="background-color: #f8f8f8">}</span></span>
-<span id="L9" class="line"></span>
-<span id="L10" class="line"><span style="background-color: #f8f8f8">dependencies</span> <span style="background-color: #f8f8f8">{</span></span>
-<span id="L11" class="line">  <span style="color: #000000;font-weight: bold">val</span> <span style="background-color: #f8f8f8">vertxVersion</span> <span style="background-color: #f8f8f8">=</span> <span style="color: #d14">"3.6.3"</span></span>
-<span id="L12" class="line">  <span style="background-color: #f8f8f8">implementation</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">"io.vertx:vertx-core:${vertxVersion}"</span><span style="background-color: #f8f8f8">)</span></span>
-<span id="L13" class="line">  <span style="background-color: #f8f8f8">implementation</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">"io.vertx:vertx-web-client:${vertxVersion}"</span><span style="background-color: #f8f8f8">)</span></span>
-<span id="L14" class="line"><span style="background-color: #f8f8f8">}</span></span>
-<span id="L15" class="line"></span>
-<span id="L16" class="line"><span style="background-color: #f8f8f8">application</span> <span style="background-color: #f8f8f8">{</span></span>
-<span id="L17" class="line">  <span style="background-color: #f8f8f8">mainClassName</span> <span style="background-color: #f8f8f8">=</span> <span style="color: #d14">"io.vertx.howtos.httpclient.JokeVerticle"</span></span>
-<span id="L18" class="line"><span style="background-color: #f8f8f8">}</span></span>
-<span id="L19" class="line"></span>
-<span id="L20" class="line"><span style="background-color: #f8f8f8">tasks</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">wrapper</span> <span style="background-color: #f8f8f8">{</span></span>
-<span id="L21" class="line">  <span style="background-color: #f8f8f8">gradleVersion</span> <span style="background-color: #f8f8f8">=</span> <span style="color: #d14">"5.2"</span></span>
-<span id="L22" class="line"><span style="background-color: #f8f8f8">}</span></span></code></pre>
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="kotlin"><span style="background-color: #f8f8f8">plugins</span> <span style="background-color: #f8f8f8">{</span>
+  <span style="background-color: #f8f8f8">java</span>
+  <span style="background-color: #f8f8f8">application</span>
+<span style="background-color: #f8f8f8">}</span>
+
+<span style="background-color: #f8f8f8">repositories</span> <span style="background-color: #f8f8f8">{</span>
+  <span style="background-color: #f8f8f8">mavenCentral</span><span style="background-color: #f8f8f8">()</span>
+<span style="background-color: #f8f8f8">}</span>
+
+<span style="background-color: #f8f8f8">dependencies</span> <span style="background-color: #f8f8f8">{</span>
+  <span style="color: #000000;font-weight: bold">val</span> <span style="background-color: #f8f8f8">vertxVersion</span> <span style="background-color: #f8f8f8">=</span> <span style="color: #d14">"3.6.3"</span>
+  <span style="background-color: #f8f8f8">implementation</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">"io.vertx:vertx-core:${vertxVersion}"</span><span style="background-color: #f8f8f8">)</span>
+  <span style="background-color: #f8f8f8">implementation</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">"io.vertx:vertx-web-client:${vertxVersion}"</span><span style="background-color: #f8f8f8">)</span>
+<span style="background-color: #f8f8f8">}</span>
+
+<span style="background-color: #f8f8f8">application</span> <span style="background-color: #f8f8f8">{</span>
+  <span style="background-color: #f8f8f8">mainClassName</span> <span style="background-color: #f8f8f8">=</span> <span style="color: #d14">"io.vertx.howtos.httpclient.JokeVerticle"</span>
+<span style="background-color: #f8f8f8">}</span>
+
+<span style="background-color: #f8f8f8">tasks</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">wrapper</span> <span style="background-color: #f8f8f8">{</span>
+  <span style="background-color: #f8f8f8">gradleVersion</span> <span style="background-color: #f8f8f8">=</span> <span style="color: #d14">"5.2"</span>
+<span style="background-color: #f8f8f8">}</span></code></pre>
 </div>
 </div>
 </div>
@@ -219,48 +219,48 @@ We can test it using a command-line tool like <code>curl</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"><span id="L1" class="line"><span style="color: #000000;font-weight: bold">package</span> <span style="background-color: #f8f8f8">io</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">vertx</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">howtos</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">httpclient</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L2" class="line"></span>
-<span id="L3" class="line"><span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.core.AbstractVerticle</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L4" class="line"><span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.core.Vertx</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L5" class="line"><span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.core.json.JsonObject</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L6" class="line"><span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.ext.web.client.HttpRequest</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L7" class="line"><span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.ext.web.client.WebClient</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L8" class="line"><span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.ext.web.client.predicate.ResponsePredicate</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L9" class="line"><span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.ext.web.codec.BodyCodec</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L10" class="line"></span>
-<span id="L11" class="line"><span style="color: #000000;font-weight: bold">public</span> <span style="color: #000000;font-weight: bold">class</span> <span style="color: #445588;font-weight: bold">JokeVerticle</span> <span style="color: #000000;font-weight: bold">extends</span> <span style="background-color: #f8f8f8">AbstractVerticle</span> <span style="color: #000000;font-weight: bold">{</span></span>
-<span id="L12" class="line"></span>
-<span id="L13" class="line">  <span style="color: #000000;font-weight: bold">private</span> <span style="background-color: #f8f8f8">HttpRequest</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="background-color: #f8f8f8">JsonObject</span><span style="color: #000000;font-weight: bold">&gt;</span> <span style="background-color: #f8f8f8">request</span><span style="color: #000000;font-weight: bold">;</span></span>
-<span id="L14" class="line"></span>
-<span id="L15" class="line">  <span style="color: #3c5d5d;font-weight: bold">@Override</span></span>
-<span id="L16" class="line">  <span style="color: #000000;font-weight: bold">public</span> <span style="color: #445588;font-weight: bold">void</span> <span style="color: #990000;font-weight: bold">start</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">{</span></span>
-<span id="L17" class="line"></span>
-<span id="L18" class="line">    <span style="background-color: #f8f8f8">request</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">WebClient</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">create</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">vertx</span><span style="color: #000000;font-weight: bold">)</span> <b class="conum">(1)</b></span>
-<span id="L19" class="line">      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">get</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #009999">443</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #d14">"icanhazdadjoke.com"</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #d14">"/"</span><span style="color: #000000;font-weight: bold">)</span> <b class="conum">(2)</b></span>
-<span id="L20" class="line">      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">ssl</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #000000;font-weight: bold">true</span><span style="color: #000000;font-weight: bold">)</span>  <b class="conum">(3)</b></span>
-<span id="L21" class="line">      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">putHeader</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">"Accept"</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #d14">"application/json"</span><span style="color: #000000;font-weight: bold">)</span>  <b class="conum">(4)</b></span>
-<span id="L22" class="line">      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">as</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">BodyCodec</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">jsonObject</span><span style="color: #000000;font-weight: bold">())</span> <b class="conum">(5)</b></span>
-<span id="L23" class="line">      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">expect</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">ResponsePredicate</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">SC_OK</span><span style="color: #000000;font-weight: bold">);</span>  <b class="conum">(6)</b></span>
-<span id="L24" class="line"></span>
-<span id="L25" class="line">    <span style="background-color: #f8f8f8">vertx</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">setPeriodic</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #009999">3000</span><span style="color: #000000;font-weight: bold">,</span> <span style="background-color: #f8f8f8">id</span> <span style="color: #000000;font-weight: bold">-&gt;</span> <span style="background-color: #f8f8f8">fetchJoke</span><span style="color: #000000;font-weight: bold">());</span></span>
-<span id="L26" class="line">  <span style="color: #000000;font-weight: bold">}</span></span>
-<span id="L27" class="line"></span>
-<span id="L28" class="line">  <span style="color: #000000;font-weight: bold">private</span> <span style="color: #445588;font-weight: bold">void</span> <span style="color: #990000;font-weight: bold">fetchJoke</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">{</span></span>
-<span id="L29" class="line">    <span style="background-color: #f8f8f8">request</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">send</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">asyncResult</span> <span style="color: #000000;font-weight: bold">-&gt;</span> <span style="color: #000000;font-weight: bold">{</span></span>
-<span id="L30" class="line">      <span style="color: #000000;font-weight: bold">if</span> <span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">asyncResult</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">succeeded</span><span style="color: #000000;font-weight: bold">())</span> <span style="color: #000000;font-weight: bold">{</span></span>
-<span id="L31" class="line">        <span style="background-color: #f8f8f8">System</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">out</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">println</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">asyncResult</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">result</span><span style="color: #000000;font-weight: bold">().</span><span style="color: #008080">body</span><span style="color: #000000;font-weight: bold">().</span><span style="color: #008080">getString</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">"joke"</span><span style="color: #000000;font-weight: bold">));</span> <b class="conum">(7)</b></span>
-<span id="L32" class="line">        <span style="background-color: #f8f8f8">System</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">out</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">println</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">"🤣"</span><span style="color: #000000;font-weight: bold">);</span></span>
-<span id="L33" class="line">        <span style="background-color: #f8f8f8">System</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">out</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">println</span><span style="color: #000000;font-weight: bold">();</span></span>
-<span id="L34" class="line">      <span style="color: #000000;font-weight: bold">}</span></span>
-<span id="L35" class="line">    <span style="color: #000000;font-weight: bold">});</span></span>
-<span id="L36" class="line">  <span style="color: #000000;font-weight: bold">}</span></span>
-<span id="L37" class="line"></span>
-<span id="L38" class="line">  <span style="color: #000000;font-weight: bold">public</span> <span style="color: #000000;font-weight: bold">static</span> <span style="color: #445588;font-weight: bold">void</span> <span style="color: #990000;font-weight: bold">main</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">String</span><span style="color: #000000;font-weight: bold">[]</span> <span style="background-color: #f8f8f8">args</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">{</span></span>
-<span id="L39" class="line">    <span style="background-color: #f8f8f8">Vertx</span> <span style="background-color: #f8f8f8">vertx</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">Vertx</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">vertx</span><span style="color: #000000;font-weight: bold">();</span></span>
-<span id="L40" class="line">    <span style="background-color: #f8f8f8">vertx</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">deployVerticle</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #000000;font-weight: bold">new</span> <span style="background-color: #f8f8f8">JokeVerticle</span><span style="color: #000000;font-weight: bold">());</span></span>
-<span id="L41" class="line">  <span style="color: #000000;font-weight: bold">}</span></span>
-<span id="L42" class="line"><span style="color: #000000;font-weight: bold">}</span></span></code></pre>
+<pre class="rouge highlight" style="background-color: #f8f8f8"><code data-lang="java"><span style="color: #000000;font-weight: bold">package</span> <span style="background-color: #f8f8f8">io</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">vertx</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">howtos</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">httpclient</span><span style="color: #000000;font-weight: bold">;</span>
+
+<span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.core.AbstractVerticle</span><span style="color: #000000;font-weight: bold">;</span>
+<span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.core.Vertx</span><span style="color: #000000;font-weight: bold">;</span>
+<span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.core.json.JsonObject</span><span style="color: #000000;font-weight: bold">;</span>
+<span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.ext.web.client.HttpRequest</span><span style="color: #000000;font-weight: bold">;</span>
+<span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.ext.web.client.WebClient</span><span style="color: #000000;font-weight: bold">;</span>
+<span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.ext.web.client.predicate.ResponsePredicate</span><span style="color: #000000;font-weight: bold">;</span>
+<span style="color: #000000;font-weight: bold">import</span> <span style="color: #555555">io.vertx.ext.web.codec.BodyCodec</span><span style="color: #000000;font-weight: bold">;</span>
+
+<span style="color: #000000;font-weight: bold">public</span> <span style="color: #000000;font-weight: bold">class</span> <span style="color: #445588;font-weight: bold">JokeVerticle</span> <span style="color: #000000;font-weight: bold">extends</span> <span style="background-color: #f8f8f8">AbstractVerticle</span> <span style="color: #000000;font-weight: bold">{</span>
+
+  <span style="color: #000000;font-weight: bold">private</span> <span style="background-color: #f8f8f8">HttpRequest</span><span style="color: #000000;font-weight: bold">&lt;</span><span style="background-color: #f8f8f8">JsonObject</span><span style="color: #000000;font-weight: bold">&gt;</span> <span style="background-color: #f8f8f8">request</span><span style="color: #000000;font-weight: bold">;</span>
+
+  <span style="color: #3c5d5d;font-weight: bold">@Override</span>
+  <span style="color: #000000;font-weight: bold">public</span> <span style="color: #445588;font-weight: bold">void</span> <span style="color: #990000;font-weight: bold">start</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">{</span>
+
+    <span style="background-color: #f8f8f8">request</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">WebClient</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">create</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">vertx</span><span style="color: #000000;font-weight: bold">)</span> // <b class="conum">(1)</b>
+      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">get</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #009999">443</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #d14">"icanhazdadjoke.com"</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #d14">"/"</span><span style="color: #000000;font-weight: bold">)</span> // <b class="conum">(2)</b>
+      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">ssl</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #000000;font-weight: bold">true</span><span style="color: #000000;font-weight: bold">)</span>  // <b class="conum">(3)</b>
+      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">putHeader</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">"Accept"</span><span style="color: #000000;font-weight: bold">,</span> <span style="color: #d14">"application/json"</span><span style="color: #000000;font-weight: bold">)</span>  // <b class="conum">(4)</b>
+      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">as</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">BodyCodec</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">jsonObject</span><span style="color: #000000;font-weight: bold">())</span> // <b class="conum">(5)</b>
+      <span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">expect</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">ResponsePredicate</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">SC_OK</span><span style="color: #000000;font-weight: bold">);</span>  // <b class="conum">(6)</b>
+
+    <span style="background-color: #f8f8f8">vertx</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">setPeriodic</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #009999">3000</span><span style="color: #000000;font-weight: bold">,</span> <span style="background-color: #f8f8f8">id</span> <span style="color: #000000;font-weight: bold">-&gt;</span> <span style="background-color: #f8f8f8">fetchJoke</span><span style="color: #000000;font-weight: bold">());</span>
+  <span style="color: #000000;font-weight: bold">}</span>
+
+  <span style="color: #000000;font-weight: bold">private</span> <span style="color: #445588;font-weight: bold">void</span> <span style="color: #990000;font-weight: bold">fetchJoke</span><span style="color: #000000;font-weight: bold">()</span> <span style="color: #000000;font-weight: bold">{</span>
+    <span style="background-color: #f8f8f8">request</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">send</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">asyncResult</span> <span style="color: #000000;font-weight: bold">-&gt;</span> <span style="color: #000000;font-weight: bold">{</span>
+      <span style="color: #000000;font-weight: bold">if</span> <span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">asyncResult</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">succeeded</span><span style="color: #000000;font-weight: bold">())</span> <span style="color: #000000;font-weight: bold">{</span>
+        <span style="background-color: #f8f8f8">System</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">out</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">println</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">asyncResult</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">result</span><span style="color: #000000;font-weight: bold">().</span><span style="color: #008080">body</span><span style="color: #000000;font-weight: bold">().</span><span style="color: #008080">getString</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">"joke"</span><span style="color: #000000;font-weight: bold">));</span> // <b class="conum">(7)</b>
+        <span style="background-color: #f8f8f8">System</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">out</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">println</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #d14">"🤣"</span><span style="color: #000000;font-weight: bold">);</span>
+        <span style="background-color: #f8f8f8">System</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">out</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">println</span><span style="color: #000000;font-weight: bold">();</span>
+      <span style="color: #000000;font-weight: bold">}</span>
+    <span style="color: #000000;font-weight: bold">});</span>
+  <span style="color: #000000;font-weight: bold">}</span>
+
+  <span style="color: #000000;font-weight: bold">public</span> <span style="color: #000000;font-weight: bold">static</span> <span style="color: #445588;font-weight: bold">void</span> <span style="color: #990000;font-weight: bold">main</span><span style="color: #000000;font-weight: bold">(</span><span style="background-color: #f8f8f8">String</span><span style="color: #000000;font-weight: bold">[]</span> <span style="background-color: #f8f8f8">args</span><span style="color: #000000;font-weight: bold">)</span> <span style="color: #000000;font-weight: bold">{</span>
+    <span style="background-color: #f8f8f8">Vertx</span> <span style="background-color: #f8f8f8">vertx</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">Vertx</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">vertx</span><span style="color: #000000;font-weight: bold">();</span>
+    <span style="background-color: #f8f8f8">vertx</span><span style="color: #000000;font-weight: bold">.</span><span style="color: #008080">deployVerticle</span><span style="color: #000000;font-weight: bold">(</span><span style="color: #000000;font-weight: bold">new</span> <span style="background-color: #f8f8f8">JokeVerticle</span><span style="color: #000000;font-weight: bold">());</span>
+  <span style="color: #000000;font-weight: bold">}</span>
+<span style="color: #000000;font-weight: bold">}</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -463,7 +463,7 @@ We can test it using a command-line tool like <code>curl</code>:</p>
   <div class="row">
     <div class="col">
       <hr>
-      <p><small>Last published: 2019-03-25 13:24:08 +0000.</small></p>
+      <p><small>Last published: 2019-03-26 07:55:06 +0000.</small></p>
     </div>
   </div>
 </div>
