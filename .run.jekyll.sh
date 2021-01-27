@@ -12,6 +12,8 @@ cp -R _site/* _gh_pages/
 
 echo "🚀 Commit and push"
 cd _gh_pages || exit
+git --global user.email "howtos@vertx.io"
+git --global user.name "Vert.x howtos"
 git add -A
 git commit -m "Deploy the how-to pages"
 git push origin gh-pages
