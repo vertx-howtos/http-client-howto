@@ -26,13 +26,13 @@ public class JokeVerticle extends AbstractVerticle {
   }
 
   private void fetchJoke() {
-    request.send(asyncResult -> {
-      if (asyncResult.succeeded()) {
-        System.out.println(asyncResult.result().body().getString("joke")); // <7>
-        System.out.println("🤣");
-        System.out.println();
-      }
-    });
+    request.send()
+    .onSuccess(result -> {
+      System.out.println(result.body().getString("joke")); // <7>
+      System.out.println("🤣");
+      System.out.println();
+    })
+    .onFailure(e -> System.out.println("No joke fetched: " + e.getMessage()));
   }
 
   public static void main(String[] args) {

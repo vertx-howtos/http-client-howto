@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-  val vertxVersion = "3.8.3"
+  val vertxVersion = "4.4.1"
   implementation("io.vertx:vertx-core:${vertxVersion}")
   implementation("io.vertx:vertx-web-client:${vertxVersion}")
 }
@@ -18,5 +18,5 @@ application {
 }
 
 tasks.wrapper {
-  gradleVersion = "5.6.3"
+  gradleVersion = "7.2"
 }
