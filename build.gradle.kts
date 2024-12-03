@@ -14,9 +14,5 @@ dependencies {
 }
 
 application {
-  mainClassName = "io.vertx.howtos.httpclient.JokeVerticle"
-}
-
-tasks.wrapper {
-  gradleVersion = "7.2"
+  mainClass = "io.vertx.howtos.httpclient.JokeVerticle"
 }
