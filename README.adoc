@@ -15,7 +15,7 @@ The application fits in a single `JokeVerticle` class.
 == What you need
 
 * A text editor or IDE
-* Java 8 higher
+* Java 11 or higher
 * Maven or Gradle
 
 == Create a project
@@ -70,10 +70,8 @@ include::src/main/java/io/vertx/howtos/httpclient/JokeVerticle.java[]
 <3> Do not forget to enable SSL encryption.
 <4> Explicitly say that we want JSON data.
 <5> The response will automatically be converted to JSON.
-<6> We expect a HTTP 200 status code, else it will fail the response.
+<6> We expect an HTTP 200 status code, else it will fail the response.
 <7> The body is a JSON object, and we write the result to the console.
-
-
 
 == Running the application
 
